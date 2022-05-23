@@ -29,6 +29,8 @@ app.use(bodyParser.json);
 
 mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser : true},() => console.log('mongo connected !!'));
 
-app.listen(3000,(req,res) => {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT,(req,res) => {
     console.log('Listening at 3000...');
 })
