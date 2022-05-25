@@ -69,7 +69,8 @@ route.post('/contact',async (req,res) => {
             else
               console.log(info);
          });
-        return res.send(req.body);
+        // return res.send(req.body);
+        
     } catch (error) {
       console.log("error", error)  
     }
