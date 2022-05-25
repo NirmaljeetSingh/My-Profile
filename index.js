@@ -3,6 +3,20 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+
+
+const transporter = nodemailer.createTransport({
+    port: 587,               // true for 465, false for other ports
+    host: "smtp.gmail.com",
+        auth: {
+            user: 'nirmaljeet.seraphic@gmail.com',
+            pass: 'Nirmaljeet000',
+            },
+    secure: false,
+});
+
+app.use(bodyParser.urlencoded({ extended: false })) //for getting form data from html form if you didn't use this then it will not send you form data
 require('dotenv/config');
 // const apiRoutes = require('./routes/api');
 const webRoutes = require('./routes/web');
@@ -23,7 +37,7 @@ app.set('view engine', 'ejs');
 app.use('/',webRoutes);
 
 // parser
-app.use(bodyParser.json);
+app.use(bodyParser.json); // this is form api body parser
 
 
 
