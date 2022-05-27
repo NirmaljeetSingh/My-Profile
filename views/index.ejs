@@ -17,6 +17,14 @@
     <link href="./css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/aos.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/main.css?ver=1.2.0" rel="stylesheet">
+    <style>
+      .seraphic {
+          width: 100px;
+          background-color: #333;
+          border-radius: 8px;
+          padding: 2px 8px;
+        }
+    </style>
     <noscript>
       <style type="text/css">
         [data-aos] {
@@ -320,7 +328,7 @@
               <div>
                 <h3 class="h5 mb-1">Web Developer</h3>
                 <div class="text-muted text-small">Enact eServices <small>(11 jun 2018 to 18 jan 2021)</small></div>
-              </div><img src="mages/Icons/enact.svg" width="48" height="48" alt="ui-ux"/>
+              </div><img src="images/Icons/enact.svg" width="48" height="48" alt="ui-ux"/>
             </div>
           </div>
           <div class="card-body px-3 py-2">
@@ -349,7 +357,7 @@
               <div>
                 <h3 class="h5 mb-1">Web Developer</h3>
                 <div class="text-muted text-small">Seraphic <small>(25 jan 2021 to 31 may 2022)</small></div>
-              </div><img src="mages/Icons/seraphic.svg" width="48" height="48" alt="app development"/>
+              </div><img src="images/Icons/seraphic.svg" width="48" height="48" alt="app development" class="seraphic"/>
             </div>
           </div>
           <div class="card-body px-3 py-2">
@@ -464,6 +472,9 @@
             <div class="form-group my-2">
               <label for="message" class="form-label fw-bolder">Message</label>
               <textarea class="form-control" style="resize: none;" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group my-2">
+              <span><%= (status == '') ? '' : (status == 'true') ? "Request has been submitted" : "Request cann't submitted try agin later." %></span>
             </div>
             <button class="btn btn-primary mt-2" type="submit">Send</button>
           </form>
